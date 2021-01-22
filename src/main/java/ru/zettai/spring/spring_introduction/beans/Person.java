@@ -1,11 +1,17 @@
 package ru.zettai.spring.spring_introduction.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component("personBean")
 public class Person {
     private String surname;
     private int age;
     private Pet pet1;
     private Pet pet2;
 
+    @Autowired
     public Person(Pet pet1) {
         System.out.println("Person bean is created and pet1 added");
         this.pet1 = pet1;
