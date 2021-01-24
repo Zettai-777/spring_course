@@ -9,24 +9,29 @@ import org.springframework.stereotype.Component;
 @Component("personBean")
 //@Scope("prototype")
 public class Person {
-//    @Value("${person.name}")
+    @Value("${person.name}")
     private String name;
-//    @Value("${person.surname}")
+    @Value("${person.surname}")
     private String surname;
-//    @Value("${person.age}")
+    @Value("${person.age}")
     private int age;
     private final Pet pet1;
     private Pet pet2;
 
 
-    @Autowired
-    public Person(@Qualifier("catBean") Pet pet1) {
+//    @Autowired
+//    public Person(@Qualifier("catBean") Pet pet1) {
+//        System.out.println("Person bean is created and pet1 added");
+//        this.pet1 = pet1;
+//    }
+
+    public Person(Pet pet1){
         System.out.println("Person bean is created and pet1 added");
         this.pet1 = pet1;
     }
 
-    @Autowired
-    @Qualifier("dogBean")
+//    @Autowired
+//    @Qualifier("dogBean")
     public void setPet2(Pet pet2) {
         System.out.println("In class person added pet2");
         this.pet2 = pet2;

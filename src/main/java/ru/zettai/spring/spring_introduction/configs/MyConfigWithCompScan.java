@@ -5,5 +5,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan("ru.zettai.spring.spring_introduction")
-public class MyConfig {
+public class MyConfigWithCompScan {
+
 }
