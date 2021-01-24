@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Component("dogBean")
-@Scope("prototype")
+//@Scope("prototype")
 public class Dog implements Pet {
     private String name;
 

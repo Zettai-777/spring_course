@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 @Component("personBean")
 //@Scope("prototype")
 public class Person {
-    @Value("${person.name}")
+//    @Value("${person.name}")
     private String name;
-    @Value("${person.surname}")
+//    @Value("${person.surname}")
     private String surname;
-    @Value("${person.age}")
+//    @Value("${person.age}")
     private int age;
     private final Pet pet1;
     private Pet pet2;
@@ -49,7 +49,7 @@ public class Person {
     }
 
     public void callYourPet(){
-        System.out.println(this);
+//        System.out.println(this);
         System.out.println("\"Hello, my lovely pet!\" said " + this.getClass().getSimpleName());
         pet1.say();
         pet2.say();
