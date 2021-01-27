@@ -19,8 +19,19 @@ public class SimpleLibrary extends AbstractLibrary{
         System.out.println("We've taken magazine from simple library. Its cost:"  + price);
     }
 
-    public String returnBook(){
+    public void returnBook(){
         System.out.println("We've returning book in simple library.");
-        return "The book successfully returning";
+    }
+
+    public void returnMagazine(){
+        System.out.println("We've returning magazine in simple library.");
+    }
+
+    public void addBook(){
+        System.out.println("We've added the new book in simple library.");
+    }
+
+    public void addMagazine(){
+        System.out.println("We've added the new magazine in simple library.");
     }
 }

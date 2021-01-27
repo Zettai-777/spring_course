@@ -7,6 +7,8 @@ import ru.zettai.spring.aop.libraries.SimpleLibrary;
 import ru.zettai.spring.aop.configs.MyConfig;
 
 public class Test1 {
+    public static final String SEPARATOR = "============================================";
+
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(MyConfig.class);
@@ -15,11 +17,19 @@ public class Test1 {
 
         SimpleLibrary simpleLibrary = context.getBean("simpleLibraryBean", SimpleLibrary.class);
         simpleLibrary.getBook();
-//        simpleLibrary.returnBook();
-        simpleLibrary.getMagazine(23);
-//
-//        SchoolLibrary schoolLibrary = context.getBean("schoolLibraryBean", SchoolLibrary.class);
-//        schoolLibrary.getBook();
+        System.out.println(SEPARATOR);
+        simpleLibrary.getMagazine(21);
+        System.out.println(SEPARATOR);
+        simpleLibrary.returnBook();
+        System.out.println(SEPARATOR);
+        simpleLibrary.returnBook();
+        System.out.println(SEPARATOR);
+        simpleLibrary.returnMagazine();
+        System.out.println(SEPARATOR);
+        simpleLibrary.addBook();
+        System.out.println(SEPARATOR);
+        SchoolLibrary schoolLibrary = context.getBean("schoolLibraryBean", SchoolLibrary.class);
+        schoolLibrary.getBook();
 
 
         context.close();
