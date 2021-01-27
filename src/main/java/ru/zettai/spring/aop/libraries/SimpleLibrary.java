@@ -4,10 +4,15 @@ import org.springframework.stereotype.Component;
 import ru.zettai.spring.aop.beans.Book;
 
 @Component("simpleLibraryBean")
-public class SimpleLibrary{
+public class SimpleLibrary extends AbstractLibrary{
 
     public void getBook(Book book) {
-        System.out.println("Book \"" + book.getName() + "\" had been take from simple library.");
+        System.out.println("Book \"" + book.getName() + "\" had been taken from simple library.");
+    }
+
+    @Override
+    public void getBook(){
+        System.out.println("We've taken book from simple library");
     }
 
     public void getMagazine(int price){
