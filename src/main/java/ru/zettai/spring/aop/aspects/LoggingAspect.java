@@ -1,15 +1,13 @@
 package ru.zettai.spring.aop.aspects;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import ru.zettai.spring.aop.beans.Book;
-import ru.zettai.spring.aop.libraries.SimpleLibrary;
+import ru.zettai.spring.aop.beans.libraries.SimpleLibrary;
 
 @Component
 @Aspect

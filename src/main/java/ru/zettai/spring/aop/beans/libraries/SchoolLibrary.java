@@ -1,4 +1,4 @@
-package ru.zettai.spring.aop.libraries;
+package ru.zettai.spring.aop.beans.libraries;
 
 import org.springframework.stereotype.Component;
 

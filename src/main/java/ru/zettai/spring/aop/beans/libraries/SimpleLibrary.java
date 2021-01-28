@@ -1,4 +1,4 @@
-package ru.zettai.spring.aop.libraries;
+package ru.zettai.spring.aop.beans.libraries;
 
 import org.springframework.stereotype.Component;
 import ru.zettai.spring.aop.beans.Book;
@@ -24,9 +24,9 @@ public class SimpleLibrary extends AbstractLibrary{
         System.out.println(SEPARATOR);
     }
 
-    public void returnBook(){
+    public String returnBook(){
         System.out.println("We've returning book in simple library.");
-        System.out.println(SEPARATOR);
+        return "Adventure of Hecelberry Finn";
     }
 
     public void returnMagazine(){

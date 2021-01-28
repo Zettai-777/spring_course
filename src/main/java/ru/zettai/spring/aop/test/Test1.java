@@ -2,8 +2,7 @@ package ru.zettai.spring.aop.test;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.zettai.spring.aop.beans.Book;
-import ru.zettai.spring.aop.libraries.SchoolLibrary;
-import ru.zettai.spring.aop.libraries.SimpleLibrary;
+import ru.zettai.spring.aop.beans.libraries.SimpleLibrary;
 import ru.zettai.spring.aop.configs.MyConfig;
 
 public class Test1 {

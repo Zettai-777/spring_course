@@ -4,7 +4,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-import ru.zettai.spring.aop.libraries.SimpleLibrary;
+import ru.zettai.spring.aop.beans.libraries.SimpleLibrary;
 
 @Component
 @Aspect
