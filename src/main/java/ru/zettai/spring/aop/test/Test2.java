@@ -13,9 +13,13 @@ public class Test2 {
 
         University university = context.getBean("university", University.class);
         university.addStudents();
-        List<Student> studentList = university.getStudents();
-        System.out.println(studentList);
-
+        List<Student> studentList;
+        try {
+            studentList = university.getStudents();
+            System.out.println(studentList);
+        } catch (RuntimeException re) {
+            System.err.println("The exception '" + re.toString() + "' have been caught!");
+        }
         context.close();
     }
 
