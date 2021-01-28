@@ -20,16 +20,16 @@ public class Test1 {
         System.out.println(SEPARATOR);
         simpleLibrary.getMagazine(21);
         System.out.println(SEPARATOR);
-        simpleLibrary.returnBook();
-        System.out.println(SEPARATOR);
-        simpleLibrary.returnBook();
-        System.out.println(SEPARATOR);
-        simpleLibrary.returnMagazine();
-        System.out.println(SEPARATOR);
-        simpleLibrary.addBook();
-        System.out.println(SEPARATOR);
-        SchoolLibrary schoolLibrary = context.getBean("schoolLibraryBean", SchoolLibrary.class);
-        schoolLibrary.getBook();
+//        simpleLibrary.returnBook();
+//        System.out.println(SEPARATOR);
+//        simpleLibrary.returnBook();
+//        System.out.println(SEPARATOR);
+//        simpleLibrary.returnMagazine();
+//        System.out.println(SEPARATOR);
+//        simpleLibrary.addBook();
+//        System.out.println(SEPARATOR);
+//        SchoolLibrary schoolLibrary = context.getBean("schoolLibraryBean", SchoolLibrary.class);
+//        schoolLibrary.getBook();
 
 
         context.close();
