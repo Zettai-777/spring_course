@@ -6,4 +6,7 @@ public class MyPointCuts {
     @Pointcut("execution(* get*(..))")
     public void allGetWithAllParamsMethod(){}
 
+    @Pointcut("execution(* add*(..))")
+    public void allAddWithAllParamsMethods(){}
+
 }

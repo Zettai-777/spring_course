@@ -13,13 +13,14 @@ public class Test1 {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(MyConfig.class);
 
-//        Book book = context.getBean("book",Book.class);
-
+        Book book = context.getBean("book",Book.class);
         SimpleLibrary simpleLibrary = context.getBean("simpleLibraryBean", SimpleLibrary.class);
-        simpleLibrary.getBook();
-        System.out.println(SEPARATOR);
-        simpleLibrary.getMagazine(21);
-        System.out.println(SEPARATOR);
+//        simpleLibrary.getBook();
+//        simpleLibrary.getMagazine(21);
+        simpleLibrary.addBook("Michail", book);
+        simpleLibrary.addMagazine();
+
+
 //        simpleLibrary.returnBook();
 //        System.out.println(SEPARATOR);
 //        simpleLibrary.returnBook();
