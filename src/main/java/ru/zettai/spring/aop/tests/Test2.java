@@ -1,4 +1,4 @@
-package ru.zettai.spring.aop.test;
+package ru.zettai.spring.aop.tests;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.zettai.spring.aop.beans.Student;
