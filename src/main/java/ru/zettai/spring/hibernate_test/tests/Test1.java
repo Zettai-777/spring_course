@@ -13,14 +13,14 @@ public class Test1 {
                 .buildSessionFactory();
 
         try(Session session = factory.getCurrentSession()) {
-            Employee employee = new Employee("Zhan-Michel", "Bayanga", "IT", 500);
+            Employee employee = new Employee("Victor", "Chirkov", "Sales", 510);
 
             //работа с транзакцией
             session.beginTransaction();
             session.save(employee);
             session.getTransaction().commit();
         }
-
+        System.out.println("Transaction completed.");
 
     }
 }
