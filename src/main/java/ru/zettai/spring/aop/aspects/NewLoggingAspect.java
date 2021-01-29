@@ -12,12 +12,21 @@ public class NewLoggingAspect {
     @Around("execution(public String returnBook())")
     public Object aroundReturnBookLoggingAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         System.out.println("aroundReturnBookLoggingAdvice : в библиотеку пытаются вернуть книгу.");
-        long start = System.currentTimeMillis();
-        Object targetMethodResult = proceedingJoinPoint.proceed();
+        Object targetMethodResult;
+//        long start = System.currentTimeMillis();
+        try {
+            targetMethodResult = proceedingJoinPoint.proceed();
+        } catch (RuntimeException re) {
+            System.out.printf("aroundReturnBookLoggingAdvice : exception '%s' caught%n", re);
+//            targetMethodResult = "Unknown book name";
+            throw re;
+        }
+
         targetMethodResult = targetMethodResult + " (Do not remember author name)";
-        long end = System.currentTimeMillis();
+//        long end = System.currentTimeMillis();
         System.out.println("aroundReturnBookLoggingAdvice : в библиотеку возвращают книгу.");
-        System.out.println("Around method works about :" + (end-start) + " ms");
+//        System.out.println("Around method works about :" + (end-start) + " ms");
+
         return targetMethodResult;
     }
 

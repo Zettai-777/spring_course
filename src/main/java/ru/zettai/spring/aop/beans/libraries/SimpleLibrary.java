@@ -25,6 +25,7 @@ public class SimpleLibrary extends AbstractLibrary{
     }
 
     public String returnBook(){
+        int a = 10/0;
         System.out.println("We've returning book in simple library.");
         return "Adventure of Hecelberry Finn";
     }
