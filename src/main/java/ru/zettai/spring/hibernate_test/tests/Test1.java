@@ -13,7 +13,8 @@ public class Test1 {
                 .buildSessionFactory();
 
         try(Session session = factory.getCurrentSession()) {
-            Employee employee = new Employee("Victor", "Chirkov", "Sales", 510);
+            Employee employee = new Employee("Zhan-Michel", "Bayanga",
+                    "IT", 550);
 
             //работа с транзакцией
             session.beginTransaction();
