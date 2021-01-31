@@ -4,7 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import ru.zettai.spring.aop.beans.libraries.SimpleLibrary;
 import ru.zettai.spring.aop.configs.MyConfig;
 
-public class Test3 {
+public class CheckOfAroundAdviceTest {
     public static void main(String[] args) {
         System.out.println("Method main starts.");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);

@@ -7,7 +7,7 @@ import ru.zettai.spring.hibernate_test.entities.Employee;
 
 import java.util.List;
 
-public class Test3 {
+public class GetListObjectsFromDBTest {
     public static void main(String[] args) {
         try (SessionFactory factory = new Configuration().configure()
                 .addAnnotatedClass(Employee.class)

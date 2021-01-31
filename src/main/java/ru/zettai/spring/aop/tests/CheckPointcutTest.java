@@ -5,7 +5,7 @@ import ru.zettai.spring.aop.beans.Book;
 import ru.zettai.spring.aop.beans.libraries.SimpleLibrary;
 import ru.zettai.spring.aop.configs.MyConfig;
 
-public class Test1 {
+public class CheckPointcutTest {
     public static final String SEPARATOR = "============================================";
 
     public static void main(String[] args) {

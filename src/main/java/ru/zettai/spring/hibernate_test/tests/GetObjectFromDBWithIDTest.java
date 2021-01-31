@@ -5,7 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import ru.zettai.spring.hibernate_test.entities.Employee;
 
-public class Test2 {
+public class GetObjectFromDBWithIDTest {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
