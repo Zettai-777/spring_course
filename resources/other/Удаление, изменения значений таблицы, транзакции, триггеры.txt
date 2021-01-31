@@ -1,0 +1,45 @@
+REMOVE 
+DELETE FROM links;
+DROP TABLE links;
+
+CHANGE TABLES
+ALTER TABLE links ADD info TEXT;
+ALTER TABLE links RENAME TO links_library;
+ALTER TABLE links REMOVE COLUMN result INTEGER;
+
+TRANSCACTIONS
+BEGIN or BEGIN TRANSACTION;
+SOME ACTIONS
+COMMIT|END TRANSACTION or ROLLBACK;
+
+Удаление столбца из таблицы:
+создать новую таблицу с нужной структурой
+перенести данные из текущей таблицы в новую
+удалить текущую таблицу
+переименовать новую на текущую
+
+BEGIN TRANSACTION;
+CREATE TABLE temp
+(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	link TEXT,
+	info TEXT
+);
+INSERT INTO temp SELECT id, link, info FROM links_library;
+DROP TABLE links_library;
+ALTER TABLE temp RENAME TO links_library;
+COMMIT;
+
+TRIGGERS
+Создаём триггер, который начинает работать после вставки значений 
+в logs и увеличивает счётчик переходов по ссылкам таблицы profiles
+для id, равного profile_id из таблицы logs
+CREATE TRIGGER update_count_prof AFTER INSERT ON logs
+BEGIN
+	UPDATE profiles SET count_prof_in=count_prof_in+1 
+	WHERE id=(SELECT profile_id FROM logs 
+				ORDER BY id DESC LIMIT 1);
+END;
+
+INSERT INTO logs (profile_id, time_action, link, action) VALUES 
+(4,datetime('now', 'localtime'), 'vk.com','OK');

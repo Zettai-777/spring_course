@@ -1,0 +1,49 @@
+History
+
+Table (USER_INFORMATION) 
+users
+id 				INTEGER PRIMARY KEY AUTOINCREMENT,
+username		TEXT,
+user_info		TEXT
+
+Table (profiles for one user)
+profiles
+id				INTEGER PRIMARY KEY AUTOINCREMENT,
+user_id			INTEGER,
+name			VARCHAR(50),
+profile_info	TEXT,
+count_prof_in	INTEGER
+
+Table(logging of profile actions)
+logs
+id				INTEGER PRIMARY KEY AUTOINCREMENT,
+profile_id		INTEGER,
+time_action		DATETIME,
+link 			TEXT,
+action			TEXT
+
+Создание таблиц
+CREATE TABLE IF NOT EXISTS users();
+
+Добавление пользователя
+INSERT INTO users (username, user_info) VALUES ('Zettai','Main User');
+INSERT INTO users (username, user_info) VALUES ('Amai','user_1');
+
+Выбор значений из таблицы
+SELECT * FROM users;
+
+INSERT INTO profiles (user_id, name, info, count_prof_in) VALUES (1,'Michail','profile 1 for users ID1', 0);
+INSERT INTO profiles (user_id, name, info, count_prof_in) VALUES (1,'Zhan-Michel','profile 2 for users ID1', 0);
+INSERT INTO profiles (user_id, name, info, count_prof_in) VALUES (2,'Omen','profile 1 for users ID2', 0);
+INSERT INTO profiles (user_id, name, info, count_prof_in) VALUES (3,'Ivan','profile 1 for users ID3', 0);
+INSERT INTO profiles (user_id, name, info, count_prof_in) VALUES (3,'MASTER_PRO','profile 2 for users ID3', 0);
+INSERT INTO profiles (user_id, name, info, count_prof_in) VALUES (4,'Anastasia','profile 1 for users ID4', 0);
+INSERT INTO profiles (user_id, name, info, count_prof_in) VALUES (4,'Fuskus Felis','profile 2 for users ID4', 0);
+ 
+Редактирование значений
+UPDATE profiles SET user_id=2 WHERE id=3;
+
+Работа с Datetime
+SELECT datetime('now','localtime');
+
+INSERT INTO logs ('profile_id', 'time_action', 'link', 'action') VALUES (1, datetime('now','localtime'),'http://ya.ru','OK');

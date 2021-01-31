@@ -1,0 +1,40 @@
+SELECT * FROM users;
+
+SELECT username,user_info FROM users;
+
+SELECT username,user_info FROM users WHERE id=1;
+
+SELECT username,user_info FROM users WHERE id>1;
+
+SELECT username,user_info FROM users WHERE id>1 AND username='Amai';
+SELECT username,user_info FROM users WHERE id>2 OR username='Zettai';
+
+SELECT username,user_info FROM users WHERE id>3 OR username LIKE '%et';
+
+SELECT id, username, user_info FROM users LIMIT 2;
+
+SELECT COUNT() from profiles;
+
+update profiles set count_prof_in = 26 where id=1;
+update profiles set count_prof_in = 5 where id=2;
+update profiles set count_prof_in = 15 where id=3;
+update profiles set count_prof_in = 30 where id=4;
+update profiles set count_prof_in = 27 where id=6;
+
+SELECT sum(count_prof_in) from profiles;
+103
+SELECT sum(count_prof_in) from profiles WHERE user_id%2 != 0;
+61
+
+SELECT avg(count_prof_in) from profiles;
+
+
+
+
+
+
+
+
+
+
+

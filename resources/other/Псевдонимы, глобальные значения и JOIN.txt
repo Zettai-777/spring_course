@@ -1,0 +1,27 @@
+SELECT users.id, users.username AS login, users.user_info AS information from users;
+
+SELECT profiles.name AS profile, count_prof_in AS score from profiles;
+
+SELECT profiles.id, profiles.name AS profile, 
+	   count_prof_in AS score,
+	   count_prof_in*2 AS double_score,
+	   profiles.id + count_prof_in AS sum_fields
+	   from profiles; 
+	   
+JOIN
+JOIN|INNER JOIN
+SELECT users.username, profiles.name, profiles.count_prof_in 
+		FROM users
+		JOIN profiles ON users.id=profiles.user_id;
+		
+SELECT profiles.name, logs.link
+		FROM profiles
+		JOIN logs ON profiles.id=logs.profile_id;
+		
+SELECT profiles.name, logs.link
+		FROM profiles
+		LEFT OUTER JOIN logs ON profiles.id=logs.profile_id;
+		
+SELECT profiles.name, logs.link
+		FROM profiles
+		RIGHT OUTER JOIN logs ON profiles.id=logs.profile_id;
